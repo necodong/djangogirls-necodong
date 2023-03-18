@@ -71,8 +71,18 @@ https://tutorial.djangogirls.org/ko/intro_to_command_line/
 
 ## Django 개발 환경 세팅하기 (Mac)
 
-Mac에는 이미 파이썬이 설치되어 있지만 맥북의 종류에 따라 파이썬 버전이 다릅니다. 따라서 python 3.6 버전을 따로 설치해줘야 합니다.
+Mac에는 이미 파이썬이 설치되어 있지만 맥북의 종류에 따라 파이썬 버전이 다릅니다. 따라서 python 3.11 버전을 따로 설치해줘야 합니다.
 먼저 homebrew가 설치되어 있지 않다면 터미널에 아래 명령어를 입력하여 설치합니다.
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+다음 brew install python@3.11 을 해서 파이썬 3.11을 설치합니다.
+
+파이썬을 설치했다면 
+
+python3 -m venv myvenv 를 해서 파이썬 가상환경을 만들어줍니다 (가상환경에 대한 설명 필요)
+
+venv는 파이썬3부터 추가된 virtualenv 를 설치하지 않아도 가상환경을 만들어주는 도구입니다.
+여기까지 했다면 맥에서는 source myvenv/bin/activate 를 통해 가상환경을 활성화 할 수 있습니다
+프롬프트 왼쪽에 (myvenv) 라고 뜨면 성공입니다.
 
