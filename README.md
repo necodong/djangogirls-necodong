@@ -34,6 +34,7 @@ Visual Studio Code (vscode)는 Microsoft에서 개발한 무료 오픈소스 에
 이번 과정에서도 vscode를 사용하게 됩니다.
 
 https://code.visualstudio.com/Download 에서 실행 파일을 다운로드하여 설치하면 됩니다.
+vscode 를 열고 좌측 Extension에서 python을 검색하여 설치합니다.
 
 ## 커맨드라인 시작하기
 
@@ -65,28 +66,56 @@ https://tutorial.djangogirls.org/ko/intro_to_command_line/
 을 한 번 따라해본다
 
 
-## 파이썬 설치하기 (Windows)
+## 파이썬 설치하기
 
-현재 파이썬은 3.10 버전까지 출시되었으나 장고 걸스 튜토리얼에서는 편의상 3.6 버전을 사용하게 됩니다.
+본 강의에서는 파이썬 3.8을 사용하게 됩니다.
 
 ## Django 개발 환경 세팅하기 (Mac)
 
-Mac에는 이미 파이썬이 설치되어 있지만 맥북의 종류에 따라 파이썬 버전이 다릅니다. 따라서 python 3.11 버전을 따로 설치해줘야 합니다.
-먼저 homebrew가 설치되어 있지 않다면 터미널에 아래 명령어를 입력하여 설치합니다.
+Mac에는 이미 파이썬이 설치되어 있지만 맥북의 종류에 따라 파이썬 버전이 다릅니다. 따라서 python 3.8 버전 따로 설치해줘야 합니다. 먼저 homebrew가 설치되어 있지 않다면 터미널에 아래 명령어를 입력하여 설치합니다.
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-다음 brew install python@3.11 을 해서 파이썬 3.11을 설치합니다.
+다음 brew install python@3.8 을 해서 파이썬 3.11을 설치합니다.
 
-파이썬을 설치했다면 
+```sh
+$ brew install python@3.8
+```
 
-python3 -m venv myvenv 를 해서 파이썬 가상환경을 만들어줍니다 (가상환경에 대한 설명 필요)
+파이썬을 설치했다면 파이썬 가상환경을 만들어줍니다.
+(가상환경에 대한 설명 필요)
 
-venv는 파이썬3부터 추가된 virtualenv 를 설치하지 않아도 가상환경을 만들어주는 도구입니다.
-여기까지 했다면 맥에서는 source myvenv/bin/activate 를 통해 가상환경을 활성화 할 수 있습니다
-프롬프트 왼쪽에 (myvenv) 라고 뜨면 성공입니다.
+```sh
+$ python3.8 -m venv myvenv
+```
 
-이 상태에서 pip install django 를 하면 django를 설치할 수 있습니다.
-장고를 설치했다면 pip freeze > requirements.txt 명령어를 실행합니다. requirements.txt 라는 파일이 생기는데요.
-나중에 pip install -r requirements.txt 명령어를 통해 새로운 컴퓨터에서도 django를 설치할 수 있습니다.
+보통 터미널에서는 아무것도 안 뜨면 잘 되었다는 뜻입니다. venv는 파이썬3부터 추가된 virtualenv 를 설치하지 않아도 가상환경을 만들어주는 도구입니다.
+
+이제 가상환경을 활성화합니다.
+
+```sh
+$ source myvenv/bin/activate
+```
+
+프롬프트 왼쪽에 (myvenv) 라고 뜨면 성공입니다. 이제 django를 설치합니다.
+
+```sh
+(myvenv) $ pip install django
+```
+
+django를 설치했다면 아래 명령어를 입력하면 requirements.txt 라는 파일이 생기는데요.
+나중에 `pip install -r requirements.txt` 명령어를 통해 새로운 컴퓨터에서도 django를 설치할 수 있습니다.
+
+이제 django의 버전을 확인할 수 있습니다. 4.1.7 이면 됩니다.
+이제 django를 설치했으니 첫 장고 프로젝트를 만들 시간입니다. 
+necodong 폴더가 만들어지면 성공입니다.
+
+```sh
+$ python -m django --version
+4.1.7
+$ django-admin startproject necodong
+```
+
 
